@@ -32,3 +32,10 @@ ESX.RegisterUsableItem('pain_chaud', function(source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_pain_chaud'))
 end)
 ```
+
+Aller dans votre esx_basicneeds sous locales/fr.lua
+```
+
+['used_pain_chaud'] = 'vous avez utilisé 1x du ~y~Pain Chaud~',
+
+```
