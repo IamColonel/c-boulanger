@@ -17,3 +17,19 @@ Start le mapping et le job
 
 importer le fichier SQL dans votre base de donnée
 
+# Rendre les pains chauds uitilisable
+Aller dans votre esx_basicneeds sous server/main.lua et ajoutez :
+````
+-- Pain Chaud
+
+ESX.RegisterUsableItem('pain_chaud', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('pain_chaud', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'hunger', 500000)
+	TriggerClientEvent('esx_basicneeds:onEat', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_pain_chaud'))
+end)
+
+```
