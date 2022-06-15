@@ -411,16 +411,3 @@ function TDeposerobjet()
         end
     end)
 end
-
-RegisterNetEvent('f:startSmoke')
-AddEventHandler('f:startSmoke', function(source)
-	SmokeAnimation()
-end)
-
-function SmokeAnimation()
-	local playerPed = GetPlayerPed(-1)
-	
-	Citizen.CreateThread(function()
-        TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_SMOKING", 0, true)               
-	end)
-end
